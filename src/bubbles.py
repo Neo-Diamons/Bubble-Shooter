@@ -17,12 +17,13 @@ class Bubbles:
     def init_circle(self, screen, colors):
         padding = self.circle_radius + self.circle_padding
         step = self.circle_radius * 2 + self.circle_padding
+        border = 27
 
         for y in range(padding, floor((screen.get_height() - step) / 100 * 75), step):
             if (y - padding) % (step * 2):
-                loop_range = range(screen.get_width() - step, padding, -step)
+                loop_range = range(screen.get_width() - border, border, -step)
             else:
-                loop_range = range(step, screen.get_width() - padding, step)
+                loop_range = range(border, screen.get_width() - border, step)
             for x in loop_range:
                 list.append(self.bubbles, Bubble(x, y, self.circle_radius, colors[randint(0, len(colors) - 1)]))
 

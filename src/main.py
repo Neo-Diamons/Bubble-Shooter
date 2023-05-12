@@ -40,7 +40,6 @@ def main():
                 current_color = colors[randint(0, len(colors) - 1)]
         else:
             time_elapsed += dt
-            print(time_elapsed)
 
         screen.fill((30, 30, 30))
         bubbles.draw(screen)
