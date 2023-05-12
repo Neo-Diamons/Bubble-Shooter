@@ -19,7 +19,7 @@ class Bubbles:
         step = self.circle_radius * 2 + self.circle_padding
         border = 27
 
-        for y in range(padding, floor((screen.get_height() - step) / 100 * 75), step):
+        for y in range(padding, floor((screen.get_height() - step) / 100 * 60), step):
             if (y - padding) % (step * 2):
                 loop_range = range(screen.get_width() - border, border, -step)
             else:
