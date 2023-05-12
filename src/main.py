@@ -30,6 +30,7 @@ def main():
 
         screen.fill((30, 30, 30))
         bubbles.draw(screen)
+        bubbles.draw_rect(screen)
         pg.display.flip()
         clock.tick(60) / 1000
 

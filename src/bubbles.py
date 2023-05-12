@@ -10,6 +10,7 @@ class Bubbles:
         self.circle_color: tuple = (255, 255, 255)
         self.circle_radius: int = 15
         self.circle_padding: int = 3
+        self.max_collided: int = 3
 
         self.init_circle(screen, colors)
 
@@ -27,8 +28,7 @@ class Bubbles:
 
     def update(self):
         for bubble in self.bubbles:
-            if bubble.update():
-                self.bubbles.remove(bubble)
+            bubble.update(self.bubbles, self.max_collided)
 
     def draw(self, screen):
         for bubble in self.bubbles:
