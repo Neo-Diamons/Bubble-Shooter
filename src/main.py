@@ -39,7 +39,8 @@ def main():
         p2 = pg.mouse.get_pos()
         angle = math.atan2(p2[1] - p1[1], p2[0] - p1[0])
         delta = (math.cos(angle) * dist, math.sin(angle) * dist)
-        pg.draw.line(screen, (255, 0, 0), p1, (p1[0] + delta[0], p1[1] + delta[1]), 3)
+        pg.draw.line(screen, (62, 63, 75), p1, (p1[0] + delta[0], p1[1] + delta[1]), 10)
+        pg.draw.circle(screen, (52, 53, 65), p1, 25)
 
         pg.display.flip()
         clock.tick(60)
