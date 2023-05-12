@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+import math
 
 import pygame as pg
 import sys
+
+import pygame.draw
 
 from bubbles import Bubbles
 
@@ -30,9 +33,16 @@ def main():
 
         screen.fill((30, 30, 30))
         bubbles.draw(screen)
-        bubbles.draw_rect(screen)
+
+        dist = 100
+        p1 = (screen.get_width() / 2, screen.get_height())
+        p2 = pg.mouse.get_pos()
+        angle = math.atan2(p2[1] - p1[1], p2[0] - p1[0])
+        delta = (math.cos(angle) * dist, math.sin(angle) * dist)
+        pg.draw.line(screen, (255, 0, 0), p1, (p1[0] + delta[0], p1[1] + delta[1]), 3)
+
         pg.display.flip()
-        clock.tick(60) / 1000
+        clock.tick(60)
 
     pg.quit()
     sys.exit()
